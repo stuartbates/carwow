@@ -3,7 +3,8 @@ require 'commands/base_command'
 class ColourPixelCommand < BaseCommand
 
   def execute(bitmap)
-    bitmap[x, y] = colour
+    bitmap[y, x] = colour
+    bitmap
   end
 
   private

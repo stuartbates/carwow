@@ -1,5 +1,3 @@
-require 'pry'
-
 class Bitmap
 
   attr_reader :rows, :columns, :bitmap

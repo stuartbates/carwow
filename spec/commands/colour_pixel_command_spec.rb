@@ -15,7 +15,7 @@ describe ColourPixelCommand do
 
     # L X Y C - Colours the pixel (X,Y) with colour C.
     it 'colours the pixel at the specified coordinates' do
-      expect { command.execute(bitmap) }.to change { bitmap[x, y] }.from('0').to(colour)
+      expect { command.execute(bitmap) }.to change { bitmap[y, x] }.from('0').to(colour)
     end
 
   end
