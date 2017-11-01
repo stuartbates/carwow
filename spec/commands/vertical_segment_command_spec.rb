@@ -12,14 +12,14 @@ describe VerticalSegmentCommand do
   describe '#execute' do
 
     let(:bitmap) { Bitmap.new(4, 4) }
-    let(:colour) { 8 }
+    let(:colour) { 'B' }
     let(:x) { 3 }
     let(:y1) { 1 }
     let(:y2) { 3 }
 
     it 'draws a vertical segment of colour C in column X between rows Y1 and Y2 inclusive' do
       result = command.execute(bitmap)
-      expected = [[0, 0, 8, 0],[0, 0, 8, 0],[0, 0, 8, 0],[0, 0, 0, 0]]
+      expected = [['O', 'O', 'B', 'O'],['O', 'O', 'B', 'O'],['O', 'O', 'B', 'O'],['O', 'O', 'O', 'O']]
       expect(result.to_a).to eq(expected)
     end
 

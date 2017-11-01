@@ -7,11 +7,8 @@ class BitmapEditor
   end
 
   def run
-    bitmap = @commands.inject(nil) do |bitmap, command|
-      command.execute
-    end
-    bitmap.to_a.each do |row|
-      puts row.join
+    @commands.inject(nil) do |bitmap, command|
+      command.execute(bitmap)
     end
   end
 

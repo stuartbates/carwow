@@ -7,19 +7,19 @@ describe HorizontalSegmentCommand do
 
   subject(:command) { described_class.new(args) }
 
-  let(:args) { [y, x1, x2, colour] }
+  let(:args) { [x1, x2, y, colour] }
 
   describe '#execute' do
 
     let(:bitmap) { Bitmap.new(4, 4) }
-    let(:colour) { 8 }
+    let(:colour) { 'G' }
     let(:y) { 3 }
     let(:x1) { 2 }
     let(:x2) { 4 }
 
     it 'draws a vertical segment of colour C in column X between rows Y1 and Y2 inclusive' do
       result = command.execute(bitmap)
-      expected = [[0, 0, 0, 0],[0, 0, 0, 0],[0, 8, 8, 8],[0, 0, 0, 0]]
+      expected = [['O', 'O', 'O', 'O'],['O', 'O', 'O', 'O'],['O', 'G', 'G', 'G'],['O', 'O', 'O', 'O']]
       expect(result.to_a).to eq(expected)
     end
 

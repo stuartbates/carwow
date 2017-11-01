@@ -3,7 +3,7 @@ require 'bitmap'
 
 class CreateBitmapCommand < BaseCommand
 
-  def execute
+  def execute(existing = nil)
     Bitmap.new(columns, rows)
   end
 

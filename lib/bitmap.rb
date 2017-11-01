@@ -2,7 +2,7 @@ class Bitmap
 
   attr_reader :rows, :columns, :bitmap, :default_colour
 
-  def initialize(columns, rows, default_colour = 0)
+  def initialize(columns, rows, default_colour = 'O')
     @rows = rows.to_i
     @columns = columns.to_i
     @default_colour = default_colour
@@ -14,14 +14,14 @@ class Bitmap
   end
 
   def []=(row, column, value)
-    row_index = row - 1
-    column_index = column - 1
+    row_index = row.to_i - 1
+    column_index = column.to_i - 1
     bitmap[row_index][column_index] = value
   end
 
   def [](row, column)
-    row_index = row - 1
-    column_index = column - 1
+    row_index = row.to_i - 1
+    column_index = column.to_i - 1
     bitmap[row_index][column_index]
   end
 

@@ -12,15 +12,15 @@ class HorizontalSegmentCommand < BaseCommand
   private
 
   def x1
-    args[1]
+    args[0]
   end
 
   def x2
-    args[2]
+    args[1]
   end
 
   def y
-    args[0]
+    args[2]
   end
 
   def colour

@@ -4,8 +4,8 @@ describe BitmapEditor do
 
   subject(:editor) { described_class.new(input_file) }
 
-  let(:input_file) { 'spec/fixtures/inputs/create_new_bitmap.txt' }
-  let(:output_file) { 'spec/fixtures/outputs/create_new_bitmap.txt' }
+  let(:input_file) { 'spec/fixtures/inputs/full_commands.txt' }
+  let(:output_file) { 'spec/fixtures/outputs/full_commands.txt' }
 
   describe '#run' do
 
