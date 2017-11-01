@@ -14,6 +14,18 @@ class Bitmap
     bitmap
   end
 
+  def []=(row, column, value)
+    row_index = row - 1
+    column_index = column - 1
+    bitmap[row_index][column_index] = value
+  end
+
+  def [](row, column)
+    row_index = row - 1
+    column_index = column - 1
+    bitmap[row_index][column_index]
+  end
+
   private
 
   def generate_bitmap

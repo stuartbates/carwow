@@ -16,4 +16,31 @@ describe Bitmap do
     end
   end
 
+  describe '[]=' do
+
+    let(:x) { 1 }
+    let(:y) { 1 }
+    let(:colour) { '8' }
+
+    it 'sets the value at the corresponding pixel' do
+      bitmap[x, y] = colour
+      expect(bitmap.to_a[0][0]).to eq(colour)
+    end
+
+  end
+
+  describe '[]' do
+
+    let(:x) { 1 }
+    let(:y) { 1 }
+    let(:colour) { '8' }
+
+    before { bitmap[x, y] = colour }
+
+    it 'sets the value at the corresponding pixel' do
+      expect(bitmap[x, y]).to eq(colour)
+    end
+
+  end
+
 end

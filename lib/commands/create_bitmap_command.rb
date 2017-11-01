@@ -3,12 +3,6 @@ require 'bitmap'
 
 class CreateBitmapCommand < BaseCommand
 
-  attr_reader :args
-
-  def initialize(args)
-    @args = args
-  end
-
   def execute
     Bitmap.new(columns, rows)
   end
