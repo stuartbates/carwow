@@ -43,4 +43,22 @@ describe Bitmap do
 
   end
 
+  describe '#default_colour' do
+
+    it 'defaults to white (0)' do
+      expect(bitmap.default_colour).to eq(0)
+    end
+
+    context 'default colour set to red (2)' do
+
+      subject(:bitmap) { described_class.new(4, 3, 2) }
+
+      it 'is set to red (2)' do
+        expect(bitmap.default_colour).to eq(2)
+      end
+
+    end
+
+  end
+
 end

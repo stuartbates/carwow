@@ -11,7 +11,7 @@ describe CreateBitmapCommand do
     let(:rows) { 3 }
 
     it 'creates and returns a bitmap of specified size' do
-      expected_bitmap = [['0'] * columns] * rows
+      expected_bitmap = [[0] * columns] * rows
       actual_bitmap = command.execute
       expect(actual_bitmap.to_a).to eq(expected_bitmap)
     end
