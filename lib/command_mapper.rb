@@ -8,7 +8,7 @@ require 'commands/show_bitmap_command'
 class CommandMapper
 
   def [](key)
-    commands[key]
+    commands[key] || raise(BitmapCommandNotFound)
   end
 
   private

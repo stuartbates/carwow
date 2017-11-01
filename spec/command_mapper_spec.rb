@@ -5,6 +5,7 @@ require 'commands/vertical_segment_command'
 require 'commands/horizontal_segment_command'
 require 'commands/clear_bitmap_command'
 require 'commands/show_bitmap_command'
+require 'custom_errors'
 
 describe CommandMapper do
 
@@ -45,6 +46,12 @@ describe CommandMapper do
     context 'command S requested' do
       it 'returns the Show Bitmap Command' do
         expect(mapper['S']).to eq(ShowBitmapCommand)
+      end
+    end
+
+    context 'invalid command requested' do
+      it 'raises a BitmapCommandNotFound error' do
+        expect { mapper['Z'] }.to raise_error(BitmapCommandNotFound)
       end
     end
 
